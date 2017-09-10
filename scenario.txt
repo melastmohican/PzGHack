@@ -1,0 +1,38 @@
+Poland	1349
+Warsaw	1709
+Norway	7949
+Low countries	5189
+France	9605
+Sealion (40)	8657
+North Africa	11789
+Middle East	9305
+El Alamein	11789
+Caucasus	11429
+Sealion (43)	8657
+Torch	2789
+Husky	8253
+Anzio	7413
+D-Day	13301
+Anvil	7337
+Ardennes	8005
+Cobra	10457
+Market-Garden	3977
+Berlin (West)	14341
+Balkans	13717
+Crete	12261
+Barbarossa	5477
+Kiev	9941
+Moscow (41)	11421
+Sevastopol	2901
+Moscow (42)	11421
+Stalingrad	11429
+Kharkov	11013
+Kursk	4733
+Moscow (43)	11421
+Byelorussia	5477
+Budapest	7253
+Berlin (East)	14341
+Berlin	14341
+Washington	9033
+Early Moscow	11421
+Sealion Plus	8657

@@ -15,6 +15,7 @@ Type
   { Common data types}
 
 
+
 { var sb: TStringBuffer;
   sb.Count := Byte( Actual lentgh of cArray)
   sb.cArray := address where charracters are copied

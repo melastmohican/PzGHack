@@ -9,9 +9,6 @@ uses
   PGUnit in 'src/Pgunit.pas',
   About in 'src/About.pas' {AboutBox};
 
-{.$R *.RES}
-//{$R VER.RES}
-
 {$R *.res}
 
 begin

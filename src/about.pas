@@ -1,14 +1,15 @@
-unit About;
+
+Unit About;
 
 {$MODE Delphi}
 
-interface
+Interface
 
-uses LCLIntf, LCLType, LMessages, Classes, Forms, Controls, StdCtrls,
-  Buttons, Dialogs, ExtCtrls;
+Uses LCLIntf, LCLType, LMessages, Classes, Forms, Controls, StdCtrls,
+Buttons, Dialogs, ExtCtrls;
 
-type
-  TAboutBox = class(TForm)
+Type 
+  TAboutBox = Class(TForm)
     Panel1: TPanel;
     OKButton: TButton;
     Version: TLabel;
@@ -19,19 +20,18 @@ type
     ProductName: TLabel;
     ProductNameShadow: TLabel;
     ProductNameHighlight: TLabel;
-    procedure FormCreate(Sender: TObject);
-  private
-    { Private declarations }
-  public
-    { Public declarations }
-  end;
 
-var
+    Private 
+    { Private declarations }
+    Public 
+    { Public declarations }
+  End;
+
+Var 
   AboutBox: TAboutBox;
 
-implementation
+Implementation
 
 {$R *.lfm}
 
-end.
-
+End.

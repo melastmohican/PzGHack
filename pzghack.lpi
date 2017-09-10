@@ -23,7 +23,7 @@
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
       <MinorVersionNr Value="10"/>
-      <BuildNr Value="517"/>
+      <BuildNr Value="518"/>
       <StringTable CompanyName="Mordor" FileDescription="Panzer General Editor" InternalName="PzGHack" LegalCopyright="Copyright 1997 Mordor" ProductName="PzGHack" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -66,7 +66,9 @@
       <Unit4>
         <Filename Value="src/about.pas"/>
         <IsPartOfProject Value="True"/>
+        <ComponentName Value="AboutBox"/>
         <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
         <UnitName Value="About"/>
       </Unit4>
     </Units>

@@ -1,9 +1,11 @@
 unit About;
 
+{$MODE Delphi}
+
 interface
 
-uses Windows, Classes, Forms, Controls, StdCtrls,
-  Buttons, Dialogs, ExtCtrls, VerInfo;
+uses LCLIntf, LCLType, LMessages, Classes, Forms, Controls, StdCtrls,
+  Buttons, Dialogs, ExtCtrls;
 
 type
   TAboutBox = class(TForm)
@@ -29,27 +31,7 @@ var
 
 implementation
 
-{$R *.DFM}
-uses Mapi;
-
-procedure TAboutBox.FormCreate(Sender: TObject);
-var
- vi: TVerInfo;
- temp: string;
-begin
- vi := TVerInfo.Create('');
- vi.GetProductName(temp);
- ProductName.Caption := temp;
- ProductNameHighlight.Caption := temp;
- ProductNameShadow.Caption := temp;
- vi.GetFileDescription(temp);
- FileDescription.Caption := temp;
- vi.GetProductVersion(temp);
- Version.Caption := temp;
- vi.GetCopyright(temp);
- Copyright.Caption := temp;
- vi.Destroy;
-end;
+{$R *.lfm}
 
 end.
 

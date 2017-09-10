@@ -1,9 +1,11 @@
 unit pgedmain;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   ComCtrls, Menus, ExtCtrls,
   About,DskUtil,PGUnit, Buttons, StdCtrls;
 
@@ -142,7 +144,7 @@ var
 
 implementation
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
@@ -182,24 +184,14 @@ var
 begin
 if OpenDlg.Execute then
  begin
-  if FHandle <> HFILE_ERROR then _lclose(fhandle);
   sb.str := OpenDlg.FileName + #0;
-  FHandle := _lopen(sb.cArray,OF_READWRITE + OF_SHARE_EXCLUSIVE);
-  if FHandle = HFILE_ERROR then
+  FHandle := ReadAllFile(sb.cArray, fmOpenReadWrite or fmShareExclusive, FHandle, cBuf);
+  if cBuf = nil then
    begin
     MessageDlg('Cannot open ' + ExtractFileName(OpenDlg.FileName), mtError, [mbOK], 0);
    end
   else
    begin
-    lSize := _llseek(FHandle, 0, 2);
-    _llseek(FHandle, 0, 0);
-    if cBuf <> NIL then
-     begin
-      StrDispose(cBuf);
-      cBuf := NIL;
-     end;
-    cBuf := StrAlloc(lSize + 2);
-    lRead := _lread(FHandle, cBuf, lSize);
     GameName.Caption := StrPas(cBuf + 1);
     GameDate.Caption := StrPas(cBuf + 15);
     GetScenarioName;
@@ -296,8 +288,8 @@ begin
   if(TListBox(Sender).ItemIndex <> OldIndex) and (OldIndex > -1) then
    begin
     SaveRecord(URec);
-    _llseek(FHandle, URec^.iOffset, 0);
-    _lwrite(FHandle, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
+    FileSeek(FHandle, URec^.iOffset, 0);
+    FileWrite(FHandle, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
    end;
   ReadRecord;
  end;
@@ -376,13 +368,13 @@ begin
  if FHandle <> HFILE_ERROR then
   begin
    SaveRecord(URec);
-   _llseek(FHandle, URec^.iOffset, 0);
-   _lwrite(FHandle, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
-   _llseek(FHandle,UnitOffs+PrestigeOffset,0);
+   FileSeek(FHandle, URec^.iOffset, 0);
+   FileWrite(FHandle, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
+   FileSeek(FHandle,UnitOffs+PrestigeOffset,0);
    New(pPre);
    pPre^.Axis := StrToInt(EdAxPrest.Text);
    pPre^.Allies := StrToInt(EdAlPrest.Text);
-   _lwrite(FHandle, PChar(pPre),SizeOf(TPrestigeRec));
+   FileWrite(FHandle, PChar(pPre),SizeOf(TPrestigeRec));
    Dispose(pPre);
   end;
 end;

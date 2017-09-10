@@ -1,0 +1,2071 @@
+object MainForm: TMainForm
+  Left = 149
+  Top = 133
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'PzGHack'
+  ClientHeight = 341
+  ClientWidth = 559
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = MainMenu
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  PixelsPerInch = 96
+  object StatusBar: TStatusBar
+    Left = 0
+    Top = 322
+    Width = 559
+    Height = 19
+    Panels = <    
+      item
+        Width = 80
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Toolbar: TPanel
+    Left = 0
+    Top = 0
+    Width = 559
+    Height = 27
+    Align = alTop
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object SpeedButton1: TSpeedButton
+      Left = 0
+      Top = 0
+      Width = 25
+      Height = 25
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000130B0000130B00000000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333FFFFF3333333333999993333333333F77777FFF333333999999999
+        33333337777FF377FF3333993370739993333377FF373F377FF3399993000339
+        993337777F777F3377F3393999707333993337F77737333337FF993399933333
+        399377F3777FF333377F993339903333399377F33737FF33377F993333707333
+        399377F333377FF3377F993333101933399377F333777FFF377F993333000993
+        399377FF3377737FF7733993330009993933373FF3777377F7F3399933000399
+        99333773FF777F777733339993707339933333773FF7FFF77333333999999999
+        3333333777333777333333333999993333333333377777333333
+      }
+      NumGlyphs = 2
+      OnClick = mExitClick
+    end
+    object SaveBtn: TSpeedButton
+      Left = 26
+      Top = 0
+      Width = 25
+      Height = 25
+      Glyph.Data = {
+        78010000424D7801000000000000760000002800000020000000100000000100
+        04000000000000000000120B0000120B00000000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        333333FFFFFFFFFFFFF33000077777770033377777777777773F000007888888
+        00037F3337F3FF37F37F00000780088800037F3337F77F37F37F000007800888
+        00037F3337F77FF7F37F00000788888800037F3337777777337F000000000000
+        00037F3FFFFFFFFFFF7F00000000000000037F77777777777F7F000FFFFFFFFF
+        00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+        00037F7F333333337F7F000FFFFFFFFF00037F7F333333337F7F000FFFFFFFFF
+        00037F7F333333337F7F000FFFFFFFFF07037F7F33333333777F000FFFFFFFFF
+        0003737FFFFFFFFF7F73300999999999003337777777777777330000
+      }
+      NumGlyphs = 2
+      OnClick = SaveBtnClick
+    end
+    object ScenarioList: TListBox
+      Left = 492
+      Top = 2
+      Width = 57
+      Height = 19
+      ItemHeight = 13
+      Items.Strings = (
+        'Poland'#9'1349'
+        'Warsaw'#9'1709'
+        'Norway'#9'7949'
+        'Low countries'#9'5189'
+        'France'#9'9605'
+        'Sealion (40)'#9'8657'
+        'North Africa'#9'11789'
+        'Middle East'#9'9305'
+        'El Alamein'#9'11789'
+        'Caucasus'#9'11429'
+        'Sealion (43)'#9'8657'
+        'Torch'#9'2789'
+        'Husky'#9'8253'
+        'Anzio'#9'7413'
+        'D-Day'#9'13301'
+        'Anvil'#9'7337'
+        'Ardennes'#9'8005'
+        'Cobra'#9'10457'
+        'Market-Garden'#9'3977'
+        'Berlin (West)'#9'14341'
+        'Balkans'#9'13717'
+        'Crete'#9'12261'
+        'Barbarossa'#9'5477'
+        'Kiev'#9'9941'
+        'Moscow (41)'#9'11421'
+        'Sevastopol'#9'2901'
+        'Moscow (42)'#9'11421'
+        'Stalingrad'#9'11429'
+        'Kharkov'#9'11013'
+        'Kursk'#9'4733'
+        'Moscow (43)'#9'11421'
+        'Byelorussia'#9'5477'
+        'Budapest'#9'7253'
+        'Berlin (East)'#9'14341'
+        'Berlin'#9'14341'
+        'Washington'#9'9033'
+        'Early Moscow'#9'11421'
+        'Sealion Plus'#9'8657'
+      )
+      TabOrder = 0
+      Visible = False
+    end
+  end
+  object AppSpace: TPanel
+    Left = 0
+    Top = 27
+    Width = 559
+    Height = 295
+    Align = alClient
+    TabOrder = 2
+    object Panel1: TPanel
+      Left = 0
+      Top = 0
+      Width = 557
+      Height = 66
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 18
+        Top = 2
+        Width = 62
+        Height = 13
+        Caption = 'Game Name:'
+      end
+      object Label2: TLabel
+        Left = 18
+        Top = 24
+        Width = 45
+        Height = 13
+        Caption = 'Scenario:'
+      end
+      object Label16: TLabel
+        Left = 268
+        Top = 2
+        Width = 26
+        Height = 13
+        Caption = 'Date:'
+      end
+      object Label17: TLabel
+        Left = 268
+        Top = 24
+        Width = 47
+        Height = 13
+        Caption = 'Turns left:'
+      end
+      object Label18: TLabel
+        Left = 388
+        Top = 24
+        Width = 42
+        Height = 13
+        Caption = 'Humans:'
+      end
+      object Label19: TLabel
+        Left = 268
+        Top = 46
+        Width = 55
+        Height = 13
+        Caption = 'GameType:'
+      end
+      object Label20: TLabel
+        Left = 388
+        Top = 46
+        Width = 33
+        Height = 13
+        Caption = 'Active:'
+      end
+      object GameName: TPanel
+        Left = 86
+        Top = 0
+        Width = 180
+        Height = 22
+        Alignment = taLeftJustify
+        BevelOuter = bvLowered
+        TabOrder = 0
+      end
+      object ScenarioName: TPanel
+        Left = 86
+        Top = 21
+        Width = 180
+        Height = 22
+        Alignment = taLeftJustify
+        BevelOuter = bvLowered
+        TabOrder = 1
+      end
+      object GameDate: TPanel
+        Left = 324
+        Top = 0
+        Width = 180
+        Height = 22
+        Alignment = taLeftJustify
+        BevelOuter = bvLowered
+        TabOrder = 2
+      end
+      object TurnsNum: TPanel
+        Left = 324
+        Top = 21
+        Width = 63
+        Height = 22
+        Alignment = taRightJustify
+        BevelOuter = bvLowered
+        TabOrder = 3
+      end
+      object HumanNum: TPanel
+        Left = 440
+        Top = 21
+        Width = 63
+        Height = 22
+        Alignment = taLeftJustify
+        BevelOuter = bvLowered
+        TabOrder = 4
+      end
+      object GameType: TPanel
+        Left = 324
+        Top = 43
+        Width = 63
+        Height = 20
+        Alignment = taLeftJustify
+        BevelOuter = bvLowered
+        TabOrder = 5
+      end
+      object ActivePlayer: TPanel
+        Left = 440
+        Top = 43
+        Width = 63
+        Height = 20
+        Alignment = taLeftJustify
+        BevelOuter = bvLowered
+        TabOrder = 6
+      end
+    end
+    object UnitPages: TPageControl
+      Left = 0
+      Top = 65
+      Width = 174
+      Height = 227
+      ActivePage = AxisPage
+      Align = alLeft
+      TabOrder = 1
+      OnChanging = UnitPagesChanging
+      object AxisPage: TTabSheet
+        Caption = 'Axis'
+        object Label14: TLabel
+          Left = 2
+          Top = 8
+          Width = 38
+          Height = 13
+          Caption = 'Prestige'
+        end
+        object AxisList: TListBox
+          Left = 2
+          Top = 32
+          Width = 160
+          Height = 165
+          ItemHeight = 13
+          TabOrder = 0
+          OnClick = ListClick
+        end
+        object EdAxPrest: TEdit
+          Left = 46
+          Top = 4
+          Width = 60
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+        end
+        object UDPreAx: TUpDown
+          Left = 106
+          Top = 4
+          Width = 15
+          Height = 21
+          Associate = EdAxPrest
+          Min = 0
+          Max = 32767
+          Position = 0
+          TabOrder = 2
+          Wrap = False
+        end
+      end
+      object AlliesPage: TTabSheet
+        Caption = 'Allies'
+        object Label15: TLabel
+          Left = 4
+          Top = 8
+          Width = 38
+          Height = 13
+          Caption = 'Prestige'
+        end
+        object AlliesList: TListBox
+          Left = 2
+          Top = 32
+          Width = 160
+          Height = 165
+          ItemHeight = 13
+          TabOrder = 0
+          OnClick = ListClick
+        end
+        object EdAlPrest: TEdit
+          Left = 46
+          Top = 4
+          Width = 60
+          Height = 21
+          TabOrder = 1
+          Text = '0'
+        end
+        object UDPreAl: TUpDown
+          Left = 106
+          Top = 4
+          Width = 15
+          Height = 21
+          Associate = EdAlPrest
+          Min = 0
+          Max = 32767
+          Position = 0
+          TabOrder = 2
+          Wrap = False
+        end
+      end
+    end
+    object Panel2: TPanel
+      Left = 174
+      Top = 84
+      Width = 379
+      Height = 215
+      TabOrder = 2
+      object Label7: TLabel
+        Left = 180
+        Top = 4
+        Width = 24
+        Height = 13
+        Caption = 'Type'
+      end
+      object Label8: TLabel
+        Left = 180
+        Top = 30
+        Width = 45
+        Height = 13
+        Caption = 'Transport'
+      end
+      object Label3: TLabel
+        Left = 18
+        Top = 4
+        Width = 28
+        Height = 13
+        Caption = 'Name'
+      end
+      object Label4: TLabel
+        Left = 18
+        Top = 30
+        Width = 36
+        Height = 13
+        Caption = 'Country'
+      end
+      object Label5: TLabel
+        Left = 18
+        Top = 78
+        Width = 37
+        Height = 13
+        Caption = 'Position'
+      end
+      object Label6: TLabel
+        Left = 18
+        Top = 102
+        Width = 40
+        Height = 13
+        Caption = 'Strength'
+      end
+      object Label9: TLabel
+        Left = 18
+        Top = 126
+        Width = 29
+        Height = 13
+        Caption = 'Ammo'
+      end
+      object Label10: TLabel
+        Left = 136
+        Top = 100
+        Width = 66
+        Height = 13
+        Caption = 'Entrenchment'
+      end
+      object Label11: TLabel
+        Left = 18
+        Top = 150
+        Width = 32
+        Height = 13
+        Caption = 'Moves'
+      end
+      object Label12: TLabel
+        Left = 136
+        Top = 124
+        Width = 53
+        Height = 13
+        Caption = 'Experience'
+      end
+      object Label13: TLabel
+        Left = 18
+        Top = 176
+        Width = 18
+        Height = 13
+        Caption = 'Kills'
+      end
+      object Supression: TLabel
+        Left = 136
+        Top = 148
+        Width = 52
+        Height = 13
+        Caption = 'Supression'
+      end
+      object Carrier: TLabel
+        Left = 180
+        Top = 54
+        Width = 30
+        Height = 13
+        Caption = 'Carrier'
+      end
+      object EdStr: TEdit
+        Left = 66
+        Top = 98
+        Width = 45
+        Height = 21
+        TabOrder = 0
+        Text = '0'
+      end
+      object UDStr: TUpDown
+        Left = 111
+        Top = 98
+        Width = 15
+        Height = 21
+        Associate = EdStr
+        Min = 0
+        Max = 255
+        Position = 0
+        TabOrder = 1
+        Wrap = False
+      end
+      object EdAmmo: TEdit
+        Left = 66
+        Top = 122
+        Width = 45
+        Height = 21
+        TabOrder = 2
+        Text = '0'
+      end
+      object UDAmmo: TUpDown
+        Left = 111
+        Top = 122
+        Width = 15
+        Height = 21
+        Associate = EdAmmo
+        Min = 0
+        Max = 255
+        Position = 0
+        TabOrder = 3
+        Wrap = False
+      end
+      object EdEntr: TEdit
+        Left = 210
+        Top = 98
+        Width = 45
+        Height = 21
+        TabOrder = 4
+        Text = '0'
+      end
+      object UDEntr: TUpDown
+        Left = 255
+        Top = 98
+        Width = 15
+        Height = 21
+        Associate = EdEntr
+        Min = 0
+        Max = 255
+        Position = 0
+        TabOrder = 5
+        Wrap = False
+      end
+      object EdExp: TEdit
+        Left = 210
+        Top = 122
+        Width = 45
+        Height = 21
+        TabOrder = 6
+        Text = '0'
+      end
+      object UDExp: TUpDown
+        Left = 255
+        Top = 122
+        Width = 15
+        Height = 21
+        Associate = EdExp
+        Min = 0
+        Max = 255
+        Position = 0
+        TabOrder = 7
+        Wrap = False
+      end
+      object EdMove: TEdit
+        Left = 66
+        Top = 146
+        Width = 45
+        Height = 21
+        TabOrder = 8
+        Text = '0'
+      end
+      object UDMove: TUpDown
+        Left = 111
+        Top = 146
+        Width = 15
+        Height = 21
+        Associate = EdMove
+        Min = 0
+        Max = 255
+        Position = 0
+        TabOrder = 9
+        Wrap = False
+      end
+      object EdKills: TEdit
+        Left = 66
+        Top = 170
+        Width = 45
+        Height = 21
+        TabOrder = 10
+        Text = '0'
+      end
+      object UDKill: TUpDown
+        Left = 111
+        Top = 170
+        Width = 15
+        Height = 21
+        Associate = EdKills
+        Min = 0
+        Max = 32767
+        Position = 0
+        TabOrder = 11
+        Wrap = False
+      end
+      object EdSupr: TEdit
+        Left = 210
+        Top = 146
+        Width = 45
+        Height = 21
+        TabOrder = 12
+        Text = '0'
+      end
+      object UDSupr: TUpDown
+        Left = 255
+        Top = 146
+        Width = 15
+        Height = 21
+        Associate = EdSupr
+        Min = 0
+        Max = 255
+        Position = 0
+        TabOrder = 13
+        Wrap = False
+      end
+      object CBType: TComboBox
+        Left = 228
+        Top = 2
+        Width = 110
+        Height = 21
+        Style = csDropDownList
+        ItemHeight = 13
+        Items.Strings = (
+          'BF109e'
+          'BF109f'
+          'BF109g'
+          'BF109k'
+          'FW190a'
+          'FW190d9'
+          'ME262A1'
+          'ME163B/Komet'
+          'HE219'
+          'HE162'
+          'DO335'
+          'BF110c'
+          'BF110d'
+          'BF110e'
+          'BF110g'
+          'ME210c'
+          'ME410a'
+          'FW190g'
+          'FW190f'
+          'JU87B'
+          'JU87R'
+          'JU87D'
+          'Ju188a'
+          'DO17z'
+          'He111 H2'
+          'Ju88A'
+          'DO217e'
+          'HE177a'
+          'Ju52g5e'
+          'ME323d'
+          'PzIA'
+          'PzIB'
+          'PzIIA'
+          'PzIID'
+          'PzIIF'
+          '8.8 FK18 ATG'
+          'Lynx'
+          'Pz 35(t)'
+          'Pz38(t)A'
+          'Pz38(t)F'
+          'Pz38(t)G'
+          'SdKfz 7/1'
+          'PzIIIE'
+          'PzIIIG'
+          'PzIIIH'
+          'PzIIIJ'
+          'PzIIIN'
+          'Pioniere Inf'
+          'PzIVD'
+          'PzIVG'
+          'PzIVH'
+          'PzIVJ'
+          'Panther D'
+          'Panther A'
+          'Panther G'
+          'Tiger I'
+          'Tiger II'
+          'StuGIIIb'
+          'StuGIIIF'
+          'StuGIIIF/8'
+          'StuGIIIG'
+          'StuH42'
+          'Hetzer'
+          'Jadgpanzer 38'
+          'Jp Elefant'
+          'StuG IV'
+          'Jadgpz IV/48'
+          'Jadgpz IV/70'
+          'JadgPanther'
+          'JadgTiger'
+          'PzJager IB'
+          'Marder II'
+          'Marder IIIH'
+          'Marder IIIM'
+          'Nashorn'
+          'IG IB'
+          'IG II'
+          'IG 38(t)M'
+          'Wespe'
+          'Hummel'
+          'FlaKPz 38(t)'
+          '37 FlaKPz IV'
+          'Wirbelwind'
+          'Ostwind I'
+          'SdKfz 10/4'
+          'Opel 6700'
+          'SPW 250/1'
+          'SPW 251/1'
+          'PSW 222/4r'
+          'PSW 231/6r'
+          'PSW 233/8r'
+          'PSW 234/1-8r'
+          'PaK35/36'
+          'PaK38'
+          'PaK40'
+          '8.8 PaK43/41'
+          'PzIVF2'
+          '7.5 leFk 16nA'
+          '10.5 leFH 18'
+          '15 sFH 18'
+          '17 K18'
+          '2 FlaK38 (4)'
+          '3.7 FlaK36'
+          '8.8 FlaK 18'
+          '39 Wehr Inf'
+          '43 Wehr Inf'
+          '40 Wehr HW'
+          '43 Wehr HW'
+          '40 LuftW FJ'
+          '43 LuftW FJ'
+          'PSW 234/2-8r'
+          'PSW 232/8r'
+          'PO PZL P11c'
+          'PO PZL P24g'
+          'PO PZL P23b'
+          'PO PZL P37b'
+          'PO TK3'
+          'PO 7TP'
+          'PO Infantry'
+          'PO Cavalry'
+          'AF 75mm Gun'
+          'GB Inf 43'
+          'GB HW Inf 43'
+          'AF 37mm ATG'
+          'AF Truck'
+          'FR Potez 63'
+          'FR CHk 75A-1'
+          'FR MS 406'
+          'FR D520S'
+          'FFR M5'
+          'FFR M4A1'
+          'FR Bloch 174'
+          'FR Amiot 143'
+          'FR Ch Lr H35'
+          'FR CL AMX R40'
+          'FR AMC 35'
+          'FR Ch D1 IG'
+          'FR Ch S35'
+          'FR Ch B1-bis'
+          'FR Truck'
+          'FR Infantry'
+          'FR 25mm ATG'
+          'FR 47mm ATG'
+          'FR 75mm ATG'
+          'FR 75mm Gun'
+          'FR 105mm Gun'
+          'FR 155mm Gun'
+          'FR 40mm AD'
+          'NOR F-DXXIII'
+          'NOR Infantry'
+          'NOR 75mm Gun'
+          'AD Mk I SP'
+          'AD Mk II SP'
+          'AD Mk I Fort'
+          'AD Mk II Fort'
+          'LC CR42'
+          'LC PZLP24'
+          'LC F-DXX1'
+          'LC Infantry'
+          'SdKfz 6/2'
+          'FR HFII'
+          'GB Hur I'
+          'GB Spit I'
+          'GB Spit II'
+          'GB Hur IID'
+          'GB Spit VB'
+          'GB Hur IV'
+          'GB Spit IX'
+          'GB Meteor III'
+          'GB Spit XIV'
+          'GB Spit XVII'
+          'GB Blen MkI'
+          'GB Blen MkIV'
+          'GB Mosq VI'
+          'GB Typhoon IB'
+          'GB Stir MkI'
+          'GB Lancaster'
+          'GB C-47'
+          'GB Matilda I'
+          'GB Matilda II'
+          'GB Mk I A9'
+          'GB Mk III A13'
+          'GB Crdr I'
+          'GB Crdr II'
+          'GB Crdr III'
+          'GB Crom IV'
+          'GB Crom VII'
+          'GB Crom VI'
+          'GB Grant'
+          'GB Chal A30'
+          'GB Comet'
+          'GB M3 Stuart'
+          'GB Sherman'
+          'GB Sh Firefly'
+          'GB M5 Stuart'
+          'GB Church III'
+          'GB Church IV'
+          'GB Church VI'
+          'GB Church VII'
+          'GB Achilles'
+          'GB Archer'
+          'GB M7 Priest'
+          'GB Sexton'
+          'GB 40mm SPAD'
+          'GB AEC I'
+          'GB AEC II'
+          'GB Humber SC'
+          'GB Daimler SC'
+          'GB AEC III'
+          'GB Ram Kg'
+          'GB Bren Ca'
+          'GB 3 Tn Lorry'
+          'GB Inf 39'
+          'GB HW Inf 39'
+          'GB Bridge Eng'
+          'GB Para 39'
+          'GB 2 Pdr ATG'
+          'GB 6 Pdr ATG'
+          'GB 17 Pdr ATG'
+          'GB 25 Pdr Gun'
+          'GB 5.5" Gun'
+          'GB 6" Gun'
+          'GB 7.2" Gun'
+          'GB 20mm SPAA'
+          'GB 40mm AD'
+          'GB 3" AD'
+          'GB Para 43'
+          'ST I-16'
+          'ST YaK-1'
+          'ST MiG-3'
+          'ST La-3'
+          'ST YaK-9M'
+          'ST YaK-1M'
+          'ST YaK-7B'
+          'ST La-5'
+          'ST YaK-9'
+          'ST La-7'
+          'ST Il-4'
+          'ST PE-2'
+          'ST Il-2'
+          'ST Il-2M3'
+          'ST Il-10'
+          'ST PE-8'
+          'ST SU-152 AT'
+          'ST Z25mm SPAA'
+          'ST BA-10'
+          'ST BA-64'
+          'ST BT-5'
+          'ST BT-7'
+          'ST T-28M1'
+          'ST T-34/40'
+          'ST T-34/41'
+          'ST T-34/43'
+          'ST T-34/85'
+          'ST T-70'
+          'ST T-60'
+          'ST T-40'
+          'ST SU-85'
+          'ST SU-122'
+          'ST SU-152'
+          'ST KV-1/39'
+          'ST KV-1/41'
+          'ST KV-1/42'
+          'ST KV-2'
+          'ST KV-85'
+          'ST IS-2'
+          'ST SU-100'
+          'ST ISU-122'
+          'ST ISU-152'
+          'ST ISU-152 AT'
+          'ST Para'
+          'ST Truck'
+          'ST SMG Inf'
+          'ST Infantry'
+          'ST Cavalry'
+          'ST Bridge Eng'
+          'ST 45mm ATG'
+          'ST 57mm ATG'
+          'ST 76mm ATG'
+          'ST 12.2cm Gun'
+          'ST 15.2cm Gun'
+          'ST 7.6cm AD'
+          'AF Carrier'
+          'AF Battleship'
+          'AF BtCruiser'
+          'AF HvyCruiser'
+          'AF LtCruiser'
+          'AF Destroyer'
+          'AF T-Boat'
+          'AF Submarine'
+          'AF Transport'
+          'Battleship Bk'
+          'Battleship Dl'
+          'Heavy Cruiser'
+          'Light Cruiser'
+          'Z-Destroyer'
+          'T-Destroyer'
+          'U-Boat'
+          'Transport'
+          'S-Boat'
+          'IT Re2000/F1'
+          'IT Re2005/S'
+          'IT Centauro'
+          'IT Ma C202/F'
+          'IT Ma C205/O'
+          'IT BA65'
+          'IT CA309'
+          'IT P108 Bi'
+          'IT SM 82'
+          'IT AB-40'
+          'IT AB-41'
+          'IT Sem L-47'
+          'IT Sem M-40'
+          'IT Sem M-41M'
+          'IT Sem M-42'
+          'IT Sem M-42M'
+          'IT L6/40'
+          'IT M13/40'
+          'IT M14/41'
+          'IT M15/42'
+          'IT 75mm SPAD'
+          'IT 90mm Breda'
+          'IT 47mm ATG'
+          'IT Fiat Truck'
+          'IT Infantry'
+          'IT Bersglri'
+          'IT 75mm Gun'
+          'IT 105mm Gun'
+          'IT 155mm Gun'
+          'Bridge Eng'
+          'AF Partisans'
+          'Bulgarian Inf'
+          'Hungarian Inf'
+          'Rumanian Inf'
+          'Greek Inf'
+          'Yugoslav Inf'
+          'US P38 Ltng'
+          'US P40 Whwk'
+          'US P51B Mustg'
+          'US P51D Mustg'
+          'US P51H Mustg'
+          'US P47B Tbolt'
+          'US P47D Tbolt'
+          'US P47N Tbolt'
+          'US B25B Mitch'
+          'US B25H Mitch'
+          'US B26C Mardr'
+          'US A26 Inv'
+          'US B17F FF'
+          'US B17G FF'
+          'US B24D Lib'
+          'US B29 SF'
+          'US B32 Dom'
+          'US C47'
+          'US M2 Halftrk'
+          'US M2A4'
+          'US M3 GMC'
+          'US M3'
+          'US M4'
+          'US M4A1'
+          'US M5'
+          'US M4A3'
+          'US M4A3 (105)'
+          'US M4A3E2'
+          'US M4A3E2(76)'
+          'US M4A1(76)W'
+          'US M4A3(76)W'
+          'US M7'
+          'US M8 HMC'
+          'US GM Truck'
+          'US M10'
+          'US M12 GMC'
+          'US M15A1 MGMC'
+          'US M16 MGMC'
+          'US M18'
+          'US M24'
+          'US M26'
+          'US M36'
+          'US Inf 41'
+          'US Inf 43'
+          'US Inf HW 41'
+          'US Inf HW 43'
+          'US Para 41'
+          'US Para 43'
+          'US Rangers 43'
+          'US Eng 41'
+          'US Eng 43'
+          'US Bridge Eng'
+          'US 37mm ATG'
+          'US 57mm ATG'
+          'US 3" ATG'
+          'US 75mm Gun'
+          'US 105mm Gun'
+          'US 155mm Gun'
+          'US 8" Gun'
+          'US 40mm AD'
+          'US 3" AD'
+          'US 90mm AD'
+          'US M8 Ghd LAC'
+          'US M20 LAC'
+          'FFR Infantry'
+          'FFR Mtn Inf'
+          'FFR 75mm Gun'
+          'FFR 105mm Gun'
+          'FFR 57mm ATG'
+          'FFR M2 Hftrk'
+          'FFR GM Truck'
+          'FFR M8 LAC'
+          'FFR M20 LAC'
+          'FPO M5 Stuart'
+          'FPO Sherman'
+          'FPO M8 LAC'
+          'FPO Bren Ca'
+          'FPO Truck'
+          'FPO Infantry'
+          'FPO Para'
+          'FPO 6 Pdr ATG'
+          'FPO 25 Pdr'
+          'FPO 6" Gun'
+          'Strongpoint'
+          'Fort'
+          'Nebelwerfer'
+          'Katyusha BM13'
+          'Katyusha BM31'
+        )
+        TabOrder = 14
+      end
+      object EdXPos: TEdit
+        Left = 66
+        Top = 74
+        Width = 59
+        Height = 21
+        TabOrder = 15
+        Text = '0'
+      end
+      object UDXPos: TUpDown
+        Left = 125
+        Top = 74
+        Width = 15
+        Height = 21
+        Associate = EdXPos
+        Min = 0
+        Max = 32767
+        Position = 0
+        TabOrder = 16
+        Wrap = False
+      end
+      object EdYPos: TEdit
+        Left = 142
+        Top = 74
+        Width = 60
+        Height = 21
+        TabOrder = 17
+        Text = '0'
+      end
+      object UDYPos: TUpDown
+        Left = 202
+        Top = 74
+        Width = 15
+        Height = 21
+        Associate = EdYPos
+        Min = 0
+        Max = 32767
+        Position = 0
+        TabOrder = 18
+        Wrap = False
+      end
+      object CKVisible: TCheckBox
+        Left = 294
+        Top = 160
+        Width = 57
+        Height = 17
+        Caption = 'Visible'
+        TabOrder = 19
+      end
+      object CKMove: TCheckBox
+        Left = 294
+        Top = 182
+        Width = 55
+        Height = 17
+        Caption = 'Moved'
+        TabOrder = 20
+      end
+      object CBTrans: TComboBox
+        Left = 228
+        Top = 26
+        Width = 110
+        Height = 21
+        ItemHeight = 13
+        Items.Strings = (
+          ''
+          'BF109e'
+          'BF109f'
+          'BF109g'
+          'BF109k'
+          'FW190a'
+          'FW190d9'
+          'ME262A1'
+          'ME163B/Komet'
+          'HE219'
+          'HE162'
+          'DO335'
+          'BF110c'
+          'BF110d'
+          'BF110e'
+          'BF110g'
+          'ME210c'
+          'ME410a'
+          'FW190g'
+          'FW190f'
+          'JU87B'
+          'JU87R'
+          'JU87D'
+          'Ju188a'
+          'DO17z'
+          'He111 H2'
+          'Ju88A'
+          'DO217e'
+          'HE177a'
+          'Ju52g5e'
+          'ME323d'
+          'PzIA'
+          'PzIB'
+          'PzIIA'
+          'PzIID'
+          'PzIIF'
+          '8.8 FK18 ATG'
+          'Lynx'
+          'Pz 35(t)'
+          'Pz38(t)A'
+          'Pz38(t)F'
+          'Pz38(t)G'
+          'SdKfz 7/1'
+          'PzIIIE'
+          'PzIIIG'
+          'PzIIIH'
+          'PzIIIJ'
+          'PzIIIN'
+          'Pioniere Inf'
+          'PzIVD'
+          'PzIVG'
+          'PzIVH'
+          'PzIVJ'
+          'Panther D'
+          'Panther A'
+          'Panther G'
+          'Tiger I'
+          'Tiger II'
+          'StuGIIIb'
+          'StuGIIIF'
+          'StuGIIIF/8'
+          'StuGIIIG'
+          'StuH42'
+          'Hetzer'
+          'Jadgpanzer 38'
+          'Jp Elefant'
+          'StuG IV'
+          'Jadgpz IV/48'
+          'Jadgpz IV/70'
+          'JadgPanther'
+          'JadgTiger'
+          'PzJager IB'
+          'Marder II'
+          'Marder IIIH'
+          'Marder IIIM'
+          'Nashorn'
+          'IG IB'
+          'IG II'
+          'IG 38(t)M'
+          'Wespe'
+          'Hummel'
+          'FlaKPz 38(t)'
+          '37 FlaKPz IV'
+          'Wirbelwind'
+          'Ostwind I'
+          'SdKfz 10/4'
+          'Opel 6700'
+          'SPW 250/1'
+          'SPW 251/1'
+          'PSW 222/4r'
+          'PSW 231/6r'
+          'PSW 233/8r'
+          'PSW 234/1-8r'
+          'PaK35/36'
+          'PaK38'
+          'PaK40'
+          '8.8 PaK43/41'
+          'PzIVF2'
+          '7.5 leFk 16nA'
+          '10.5 leFH 18'
+          '15 sFH 18'
+          '17 K18'
+          '2 FlaK38 (4)'
+          '3.7 FlaK36'
+          '8.8 FlaK 18'
+          '39 Wehr Inf'
+          '43 Wehr Inf'
+          '40 Wehr HW'
+          '43 Wehr HW'
+          '40 LuftW FJ'
+          '43 LuftW FJ'
+          'PSW 234/2-8r'
+          'PSW 232/8r'
+          'PO PZL P11c'
+          'PO PZL P24g'
+          'PO PZL P23b'
+          'PO PZL P37b'
+          'PO TK3'
+          'PO 7TP'
+          'PO Infantry'
+          'PO Cavalry'
+          'AF 75mm Gun'
+          'GB Inf 43'
+          'GB HW Inf 43'
+          'AF 37mm ATG'
+          'AF Truck'
+          'FR Potez 63'
+          'FR CHk 75A-1'
+          'FR MS 406'
+          'FR D520S'
+          'FFR M5'
+          'FFR M4A1'
+          'FR Bloch 174'
+          'FR Amiot 143'
+          'FR Ch Lr H35'
+          'FR CL AMX R40'
+          'FR AMC 35'
+          'FR Ch D1 IG'
+          'FR Ch S35'
+          'FR Ch B1-bis'
+          'FR Truck'
+          'FR Infantry'
+          'FR 25mm ATG'
+          'FR 47mm ATG'
+          'FR 75mm ATG'
+          'FR 75mm Gun'
+          'FR 105mm Gun'
+          'FR 155mm Gun'
+          'FR 40mm AD'
+          'NOR F-DXXIII'
+          'NOR Infantry'
+          'NOR 75mm Gun'
+          'AD Mk I SP'
+          'AD Mk II SP'
+          'AD Mk I Fort'
+          'AD Mk II Fort'
+          'LC CR42'
+          'LC PZLP24'
+          'LC F-DXX1'
+          'LC Infantry'
+          'SdKfz 6/2'
+          'FR HFII'
+          'GB Hur I'
+          'GB Spit I'
+          'GB Spit II'
+          'GB Hur IID'
+          'GB Spit VB'
+          'GB Hur IV'
+          'GB Spit IX'
+          'GB Meteor III'
+          'GB Spit XIV'
+          'GB Spit XVII'
+          'GB Blen MkI'
+          'GB Blen MkIV'
+          'GB Mosq VI'
+          'GB Typhoon IB'
+          'GB Stir MkI'
+          'GB Lancaster'
+          'GB C-47'
+          'GB Matilda I'
+          'GB Matilda II'
+          'GB Mk I A9'
+          'GB Mk III A13'
+          'GB Crdr I'
+          'GB Crdr II'
+          'GB Crdr III'
+          'GB Crom IV'
+          'GB Crom VII'
+          'GB Crom VI'
+          'GB Grant'
+          'GB Chal A30'
+          'GB Comet'
+          'GB M3 Stuart'
+          'GB Sherman'
+          'GB Sh Firefly'
+          'GB M5 Stuart'
+          'GB Church III'
+          'GB Church IV'
+          'GB Church VI'
+          'GB Church VII'
+          'GB Achilles'
+          'GB Archer'
+          'GB M7 Priest'
+          'GB Sexton'
+          'GB 40mm SPAD'
+          'GB AEC I'
+          'GB AEC II'
+          'GB Humber SC'
+          'GB Daimler SC'
+          'GB AEC III'
+          'GB Ram Kg'
+          'GB Bren Ca'
+          'GB 3 Tn Lorry'
+          'GB Inf 39'
+          'GB HW Inf 39'
+          'GB Bridge Eng'
+          'GB Para 39'
+          'GB 2 Pdr ATG'
+          'GB 6 Pdr ATG'
+          'GB 17 Pdr ATG'
+          'GB 25 Pdr Gun'
+          'GB 5.5" Gun'
+          'GB 6" Gun'
+          'GB 7.2" Gun'
+          'GB 20mm SPAA'
+          'GB 40mm AD'
+          'GB 3" AD'
+          'GB Para 43'
+          'ST I-16'
+          'ST YaK-1'
+          'ST MiG-3'
+          'ST La-3'
+          'ST YaK-9M'
+          'ST YaK-1M'
+          'ST YaK-7B'
+          'ST La-5'
+          'ST YaK-9'
+          'ST La-7'
+          'ST Il-4'
+          'ST PE-2'
+          'ST Il-2'
+          'ST Il-2M3'
+          'ST Il-10'
+          'ST PE-8'
+          'ST SU-152 AT'
+          'ST Z25mm SPAA'
+          'ST BA-10'
+          'ST BA-64'
+          'ST BT-5'
+          'ST BT-7'
+          'ST T-28M1'
+          'ST T-34/40'
+          'ST T-34/41'
+          'ST T-34/43'
+          'ST T-34/85'
+          'ST T-70'
+          'ST T-60'
+          'ST T-40'
+          'ST SU-85'
+          'ST SU-122'
+          'ST SU-152'
+          'ST KV-1/39'
+          'ST KV-1/41'
+          'ST KV-1/42'
+          'ST KV-2'
+          'ST KV-85'
+          'ST IS-2'
+          'ST SU-100'
+          'ST ISU-122'
+          'ST ISU-152'
+          'ST ISU-152 AT'
+          'ST Para'
+          'ST Truck'
+          'ST SMG Inf'
+          'ST Infantry'
+          'ST Cavalry'
+          'ST Bridge Eng'
+          'ST 45mm ATG'
+          'ST 57mm ATG'
+          'ST 76mm ATG'
+          'ST 12.2cm Gun'
+          'ST 15.2cm Gun'
+          'ST 7.6cm AD'
+          'AF Carrier'
+          'AF Battleship'
+          'AF BtCruiser'
+          'AF HvyCruiser'
+          'AF LtCruiser'
+          'AF Destroyer'
+          'AF T-Boat'
+          'AF Submarine'
+          'AF Transport'
+          'Battleship Bk'
+          'Battleship Dl'
+          'Heavy Cruiser'
+          'Light Cruiser'
+          'Z-Destroyer'
+          'T-Destroyer'
+          'U-Boat'
+          'Transport'
+          'S-Boat'
+          'IT Re2000/F1'
+          'IT Re2005/S'
+          'IT Centauro'
+          'IT Ma C202/F'
+          'IT Ma C205/O'
+          'IT BA65'
+          'IT CA309'
+          'IT P108 Bi'
+          'IT SM 82'
+          'IT AB-40'
+          'IT AB-41'
+          'IT Sem L-47'
+          'IT Sem M-40'
+          'IT Sem M-41M'
+          'IT Sem M-42'
+          'IT Sem M-42M'
+          'IT L6/40'
+          'IT M13/40'
+          'IT M14/41'
+          'IT M15/42'
+          'IT 75mm SPAD'
+          'IT 90mm Breda'
+          'IT 47mm ATG'
+          'IT Fiat Truck'
+          'IT Infantry'
+          'IT Bersglri'
+          'IT 75mm Gun'
+          'IT 105mm Gun'
+          'IT 155mm Gun'
+          'Bridge Eng'
+          'AF Partisans'
+          'Bulgarian Inf'
+          'Hungarian Inf'
+          'Rumanian Inf'
+          'Greek Inf'
+          'Yugoslav Inf'
+          'US P38 Ltng'
+          'US P40 Whwk'
+          'US P51B Mustg'
+          'US P51D Mustg'
+          'US P51H Mustg'
+          'US P47B Tbolt'
+          'US P47D Tbolt'
+          'US P47N Tbolt'
+          'US B25B Mitch'
+          'US B25H Mitch'
+          'US B26C Mardr'
+          'US A26 Inv'
+          'US B17F FF'
+          'US B17G FF'
+          'US B24D Lib'
+          'US B29 SF'
+          'US B32 Dom'
+          'US C47'
+          'US M2 Halftrk'
+          'US M2A4'
+          'US M3 GMC'
+          'US M3'
+          'US M4'
+          'US M4A1'
+          'US M5'
+          'US M4A3'
+          'US M4A3 (105)'
+          'US M4A3E2'
+          'US M4A3E2(76)'
+          'US M4A1(76)W'
+          'US M4A3(76)W'
+          'US M7'
+          'US M8 HMC'
+          'US GM Truck'
+          'US M10'
+          'US M12 GMC'
+          'US M15A1 MGMC'
+          'US M16 MGMC'
+          'US M18'
+          'US M24'
+          'US M26'
+          'US M36'
+          'US Inf 41'
+          'US Inf 43'
+          'US Inf HW 41'
+          'US Inf HW 43'
+          'US Para 41'
+          'US Para 43'
+          'US Rangers 43'
+          'US Eng 41'
+          'US Eng 43'
+          'US Bridge Eng'
+          'US 37mm ATG'
+          'US 57mm ATG'
+          'US 3" ATG'
+          'US 75mm Gun'
+          'US 105mm Gun'
+          'US 155mm Gun'
+          'US 8" Gun'
+          'US 40mm AD'
+          'US 3" AD'
+          'US 90mm AD'
+          'US M8 Ghd LAC'
+          'US M20 LAC'
+          'FFR Infantry'
+          'FFR Mtn Inf'
+          'FFR 75mm Gun'
+          'FFR 105mm Gun'
+          'FFR 57mm ATG'
+          'FFR M2 Hftrk'
+          'FFR GM Truck'
+          'FFR M8 LAC'
+          'FFR M20 LAC'
+          'FPO M5 Stuart'
+          'FPO Sherman'
+          'FPO M8 LAC'
+          'FPO Bren Ca'
+          'FPO Truck'
+          'FPO Infantry'
+          'FPO Para'
+          'FPO 6 Pdr ATG'
+          'FPO 25 Pdr'
+          'FPO 6" Gun'
+          'Strongpoint'
+          'Fort'
+          'Nebelwerfer'
+          'Katyusha BM13'
+          'Katyusha BM31'
+        )
+        TabOrder = 21
+      end
+      object EdName: TEdit
+        Left = 66
+        Top = 2
+        Width = 110
+        Height = 21
+        TabOrder = 22
+      end
+      object CBFlag: TComboBox
+        Left = 66
+        Top = 26
+        Width = 110
+        Height = 21
+        ItemHeight = 13
+        Items.Strings = (
+          'Austria'
+          'Belgium'
+          'Bulgaria'
+          'Netherlands'
+          'Denmark'
+          'Finnland'
+          'France'
+          'Germany'
+          'Greece'
+          'USA'
+          'Ireland'
+          'Turkey'
+          'Italy'
+          'Hungary'
+          'Norway'
+          'Poland'
+          'Arab'
+          'Romania'
+          'Spain'
+          'Soviet Union'
+          'Sveden'
+          'Switzerland'
+          'Great Britain'
+          'Yugoslavia'
+        )
+        TabOrder = 23
+      end
+      object CBCarrier: TComboBox
+        Left = 228
+        Top = 50
+        Width = 110
+        Height = 21
+        ItemHeight = 13
+        Items.Strings = (
+          ''
+          'BF109e'
+          'BF109f'
+          'BF109g'
+          'BF109k'
+          'FW190a'
+          'FW190d9'
+          'ME262A1'
+          'ME163B/Komet'
+          'HE219'
+          'HE162'
+          'DO335'
+          'BF110c'
+          'BF110d'
+          'BF110e'
+          'BF110g'
+          'ME210c'
+          'ME410a'
+          'FW190g'
+          'FW190f'
+          'JU87B'
+          'JU87R'
+          'JU87D'
+          'Ju188a'
+          'DO17z'
+          'He111 H2'
+          'Ju88A'
+          'DO217e'
+          'HE177a'
+          'Ju52g5e'
+          'ME323d'
+          'PzIA'
+          'PzIB'
+          'PzIIA'
+          'PzIID'
+          'PzIIF'
+          '8.8 FK18 ATG'
+          'Lynx'
+          'Pz 35(t)'
+          'Pz38(t)A'
+          'Pz38(t)F'
+          'Pz38(t)G'
+          'SdKfz 7/1'
+          'PzIIIE'
+          'PzIIIG'
+          'PzIIIH'
+          'PzIIIJ'
+          'PzIIIN'
+          'Pioniere Inf'
+          'PzIVD'
+          'PzIVG'
+          'PzIVH'
+          'PzIVJ'
+          'Panther D'
+          'Panther A'
+          'Panther G'
+          'Tiger I'
+          'Tiger II'
+          'StuGIIIb'
+          'StuGIIIF'
+          'StuGIIIF/8'
+          'StuGIIIG'
+          'StuH42'
+          'Hetzer'
+          'Jadgpanzer 38'
+          'Jp Elefant'
+          'StuG IV'
+          'Jadgpz IV/48'
+          'Jadgpz IV/70'
+          'JadgPanther'
+          'JadgTiger'
+          'PzJager IB'
+          'Marder II'
+          'Marder IIIH'
+          'Marder IIIM'
+          'Nashorn'
+          'IG IB'
+          'IG II'
+          'IG 38(t)M'
+          'Wespe'
+          'Hummel'
+          'FlaKPz 38(t)'
+          '37 FlaKPz IV'
+          'Wirbelwind'
+          'Ostwind I'
+          'SdKfz 10/4'
+          'Opel 6700'
+          'SPW 250/1'
+          'SPW 251/1'
+          'PSW 222/4r'
+          'PSW 231/6r'
+          'PSW 233/8r'
+          'PSW 234/1-8r'
+          'PaK35/36'
+          'PaK38'
+          'PaK40'
+          '8.8 PaK43/41'
+          'PzIVF2'
+          '7.5 leFk 16nA'
+          '10.5 leFH 18'
+          '15 sFH 18'
+          '17 K18'
+          '2 FlaK38 (4)'
+          '3.7 FlaK36'
+          '8.8 FlaK 18'
+          '39 Wehr Inf'
+          '43 Wehr Inf'
+          '40 Wehr HW'
+          '43 Wehr HW'
+          '40 LuftW FJ'
+          '43 LuftW FJ'
+          'PSW 234/2-8r'
+          'PSW 232/8r'
+          'PO PZL P11c'
+          'PO PZL P24g'
+          'PO PZL P23b'
+          'PO PZL P37b'
+          'PO TK3'
+          'PO 7TP'
+          'PO Infantry'
+          'PO Cavalry'
+          'AF 75mm Gun'
+          'GB Inf 43'
+          'GB HW Inf 43'
+          'AF 37mm ATG'
+          'AF Truck'
+          'FR Potez 63'
+          'FR CHk 75A-1'
+          'FR MS 406'
+          'FR D520S'
+          'FFR M5'
+          'FFR M4A1'
+          'FR Bloch 174'
+          'FR Amiot 143'
+          'FR Ch Lr H35'
+          'FR CL AMX R40'
+          'FR AMC 35'
+          'FR Ch D1 IG'
+          'FR Ch S35'
+          'FR Ch B1-bis'
+          'FR Truck'
+          'FR Infantry'
+          'FR 25mm ATG'
+          'FR 47mm ATG'
+          'FR 75mm ATG'
+          'FR 75mm Gun'
+          'FR 105mm Gun'
+          'FR 155mm Gun'
+          'FR 40mm AD'
+          'NOR F-DXXIII'
+          'NOR Infantry'
+          'NOR 75mm Gun'
+          'AD Mk I SP'
+          'AD Mk II SP'
+          'AD Mk I Fort'
+          'AD Mk II Fort'
+          'LC CR42'
+          'LC PZLP24'
+          'LC F-DXX1'
+          'LC Infantry'
+          'SdKfz 6/2'
+          'FR HFII'
+          'GB Hur I'
+          'GB Spit I'
+          'GB Spit II'
+          'GB Hur IID'
+          'GB Spit VB'
+          'GB Hur IV'
+          'GB Spit IX'
+          'GB Meteor III'
+          'GB Spit XIV'
+          'GB Spit XVII'
+          'GB Blen MkI'
+          'GB Blen MkIV'
+          'GB Mosq VI'
+          'GB Typhoon IB'
+          'GB Stir MkI'
+          'GB Lancaster'
+          'GB C-47'
+          'GB Matilda I'
+          'GB Matilda II'
+          'GB Mk I A9'
+          'GB Mk III A13'
+          'GB Crdr I'
+          'GB Crdr II'
+          'GB Crdr III'
+          'GB Crom IV'
+          'GB Crom VII'
+          'GB Crom VI'
+          'GB Grant'
+          'GB Chal A30'
+          'GB Comet'
+          'GB M3 Stuart'
+          'GB Sherman'
+          'GB Sh Firefly'
+          'GB M5 Stuart'
+          'GB Church III'
+          'GB Church IV'
+          'GB Church VI'
+          'GB Church VII'
+          'GB Achilles'
+          'GB Archer'
+          'GB M7 Priest'
+          'GB Sexton'
+          'GB 40mm SPAD'
+          'GB AEC I'
+          'GB AEC II'
+          'GB Humber SC'
+          'GB Daimler SC'
+          'GB AEC III'
+          'GB Ram Kg'
+          'GB Bren Ca'
+          'GB 3 Tn Lorry'
+          'GB Inf 39'
+          'GB HW Inf 39'
+          'GB Bridge Eng'
+          'GB Para 39'
+          'GB 2 Pdr ATG'
+          'GB 6 Pdr ATG'
+          'GB 17 Pdr ATG'
+          'GB 25 Pdr Gun'
+          'GB 5.5" Gun'
+          'GB 6" Gun'
+          'GB 7.2" Gun'
+          'GB 20mm SPAA'
+          'GB 40mm AD'
+          'GB 3" AD'
+          'GB Para 43'
+          'ST I-16'
+          'ST YaK-1'
+          'ST MiG-3'
+          'ST La-3'
+          'ST YaK-9M'
+          'ST YaK-1M'
+          'ST YaK-7B'
+          'ST La-5'
+          'ST YaK-9'
+          'ST La-7'
+          'ST Il-4'
+          'ST PE-2'
+          'ST Il-2'
+          'ST Il-2M3'
+          'ST Il-10'
+          'ST PE-8'
+          'ST SU-152 AT'
+          'ST Z25mm SPAA'
+          'ST BA-10'
+          'ST BA-64'
+          'ST BT-5'
+          'ST BT-7'
+          'ST T-28M1'
+          'ST T-34/40'
+          'ST T-34/41'
+          'ST T-34/43'
+          'ST T-34/85'
+          'ST T-70'
+          'ST T-60'
+          'ST T-40'
+          'ST SU-85'
+          'ST SU-122'
+          'ST SU-152'
+          'ST KV-1/39'
+          'ST KV-1/41'
+          'ST KV-1/42'
+          'ST KV-2'
+          'ST KV-85'
+          'ST IS-2'
+          'ST SU-100'
+          'ST ISU-122'
+          'ST ISU-152'
+          'ST ISU-152 AT'
+          'ST Para'
+          'ST Truck'
+          'ST SMG Inf'
+          'ST Infantry'
+          'ST Cavalry'
+          'ST Bridge Eng'
+          'ST 45mm ATG'
+          'ST 57mm ATG'
+          'ST 76mm ATG'
+          'ST 12.2cm Gun'
+          'ST 15.2cm Gun'
+          'ST 7.6cm AD'
+          'AF Carrier'
+          'AF Battleship'
+          'AF BtCruiser'
+          'AF HvyCruiser'
+          'AF LtCruiser'
+          'AF Destroyer'
+          'AF T-Boat'
+          'AF Submarine'
+          'AF Transport'
+          'Battleship Bk'
+          'Battleship Dl'
+          'Heavy Cruiser'
+          'Light Cruiser'
+          'Z-Destroyer'
+          'T-Destroyer'
+          'U-Boat'
+          'Transport'
+          'S-Boat'
+          'IT Re2000/F1'
+          'IT Re2005/S'
+          'IT Centauro'
+          'IT Ma C202/F'
+          'IT Ma C205/O'
+          'IT BA65'
+          'IT CA309'
+          'IT P108 Bi'
+          'IT SM 82'
+          'IT AB-40'
+          'IT AB-41'
+          'IT Sem L-47'
+          'IT Sem M-40'
+          'IT Sem M-41M'
+          'IT Sem M-42'
+          'IT Sem M-42M'
+          'IT L6/40'
+          'IT M13/40'
+          'IT M14/41'
+          'IT M15/42'
+          'IT 75mm SPAD'
+          'IT 90mm Breda'
+          'IT 47mm ATG'
+          'IT Fiat Truck'
+          'IT Infantry'
+          'IT Bersglri'
+          'IT 75mm Gun'
+          'IT 105mm Gun'
+          'IT 155mm Gun'
+          'Bridge Eng'
+          'AF Partisans'
+          'Bulgarian Inf'
+          'Hungarian Inf'
+          'Rumanian Inf'
+          'Greek Inf'
+          'Yugoslav Inf'
+          'US P38 Ltng'
+          'US P40 Whwk'
+          'US P51B Mustg'
+          'US P51D Mustg'
+          'US P51H Mustg'
+          'US P47B Tbolt'
+          'US P47D Tbolt'
+          'US P47N Tbolt'
+          'US B25B Mitch'
+          'US B25H Mitch'
+          'US B26C Mardr'
+          'US A26 Inv'
+          'US B17F FF'
+          'US B17G FF'
+          'US B24D Lib'
+          'US B29 SF'
+          'US B32 Dom'
+          'US C47'
+          'US M2 Halftrk'
+          'US M2A4'
+          'US M3 GMC'
+          'US M3'
+          'US M4'
+          'US M4A1'
+          'US M5'
+          'US M4A3'
+          'US M4A3 (105)'
+          'US M4A3E2'
+          'US M4A3E2(76)'
+          'US M4A1(76)W'
+          'US M4A3(76)W'
+          'US M7'
+          'US M8 HMC'
+          'US GM Truck'
+          'US M10'
+          'US M12 GMC'
+          'US M15A1 MGMC'
+          'US M16 MGMC'
+          'US M18'
+          'US M24'
+          'US M26'
+          'US M36'
+          'US Inf 41'
+          'US Inf 43'
+          'US Inf HW 41'
+          'US Inf HW 43'
+          'US Para 41'
+          'US Para 43'
+          'US Rangers 43'
+          'US Eng 41'
+          'US Eng 43'
+          'US Bridge Eng'
+          'US 37mm ATG'
+          'US 57mm ATG'
+          'US 3" ATG'
+          'US 75mm Gun'
+          'US 105mm Gun'
+          'US 155mm Gun'
+          'US 8" Gun'
+          'US 40mm AD'
+          'US 3" AD'
+          'US 90mm AD'
+          'US M8 Ghd LAC'
+          'US M20 LAC'
+          'FFR Infantry'
+          'FFR Mtn Inf'
+          'FFR 75mm Gun'
+          'FFR 105mm Gun'
+          'FFR 57mm ATG'
+          'FFR M2 Hftrk'
+          'FFR GM Truck'
+          'FFR M8 LAC'
+          'FFR M20 LAC'
+          'FPO M5 Stuart'
+          'FPO Sherman'
+          'FPO M8 LAC'
+          'FPO Bren Ca'
+          'FPO Truck'
+          'FPO Infantry'
+          'FPO Para'
+          'FPO 6 Pdr ATG'
+          'FPO 25 Pdr'
+          'FPO 6" Gun'
+          'Strongpoint'
+          'Fort'
+          'Nebelwerfer'
+          'Katyusha BM13'
+          'Katyusha BM31'
+        )
+        TabOrder = 24
+      end
+      object RGMount: TRadioGroup
+        Left = 280
+        Top = 74
+        Width = 77
+        Height = 79
+        Caption = 'Mount'
+        TabOrder = 25
+      end
+      object RBMtNone: TRadioButton
+        Left = 286
+        Top = 90
+        Width = 57
+        Height = 17
+        Caption = 'None'
+        TabOrder = 26
+      end
+      object RBMtTrans: TRadioButton
+        Left = 286
+        Top = 110
+        Width = 69
+        Height = 17
+        Caption = 'Transport'
+        TabOrder = 27
+      end
+      object RBMtCarrier: TRadioButton
+        Left = 286
+        Top = 130
+        Width = 61
+        Height = 17
+        Caption = 'Carrier'
+        TabOrder = 28
+      end
+    end
+  end
+  object MainMenu: TMainMenu
+    Left = 462
+    Top = 65532
+    object mFile: TMenuItem
+      Caption = '&File'
+      ShortCut = 0
+      object mOpen: TMenuItem
+        Caption = '&Open'
+        ShortCut = 0
+        OnClick = mOpenClick
+      end
+      object mSave: TMenuItem
+        Caption = '&Save'
+        ShortCut = 0
+      end
+      object N1: TMenuItem
+        Caption = '-'
+        ShortCut = 0
+      end
+      object mExit: TMenuItem
+        Caption = 'E&xit'
+        ShortCut = 0
+        OnClick = mExitClick
+      end
+    end
+    object mHelp: TMenuItem
+      Caption = '&Help'
+      ShortCut = 0
+      object mAbout: TMenuItem
+        Caption = '&About'
+        ShortCut = 0
+        OnClick = mAboutClick
+      end
+    end
+  end
+  object Timer: TTimer
+    OnTimer = TimerTimer
+    Left = 434
+    Top = 65532
+  end
+  object OpenDlg: TOpenDialog
+    DefaultExt = 'SV*'
+    Filter = 'Panzer General Save File|game.sv*'
+    InitialDir = '.'
+    Options = [ofPathMustExist, ofFileMustExist]
+    Left = 408
+    Top = 65532
+  end
+end

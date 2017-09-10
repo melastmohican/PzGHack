@@ -1,5 +1,7 @@
 unit PGUnit;
 
+{$MODE Delphi}
+
 interface
 
 type

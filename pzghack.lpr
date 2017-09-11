@@ -5,9 +5,9 @@ program PzGHack;
 uses
   Forms, Interfaces,
   pgedmain in 'src/pgedmain.pas' {MainForm},
-  DskUtil in 'src/Dskutil.pas',
-  PGUnit in 'src/Pgunit.pas',
-  About in 'src/About.pas' {AboutBox};
+  DskUtil in 'src/dskutil.pas',
+  PGUnit in 'src/pgunit.pas',
+  About in 'src/about.pas' {AboutBox};
 
 {$R *.res}
 

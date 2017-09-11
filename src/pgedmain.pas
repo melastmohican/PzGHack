@@ -288,8 +288,7 @@ begin
   if(TListBox(Sender).ItemIndex <> OldIndex) and (OldIndex > -1) then
    begin
     SaveRecord(URec);
-    FileSeek(FHandle, URec^.iOffset, 0);
-    FileWrite(FHandle, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
+    WriteRecord(FHandle, URec^.iOffset, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
    end;
   ReadRecord;
  end;
@@ -368,13 +367,11 @@ begin
  if FHandle <> HFILE_ERROR then
   begin
    SaveRecord(URec);
-   FileSeek(FHandle, URec^.iOffset, 0);
-   FileWrite(FHandle, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
-   FileSeek(FHandle,UnitOffs+PrestigeOffset,0);
+   WriteRecord(FHandle, URec^.iOffset, PChar(URec), SizeOf(TUnitRec) - SizeOf(LongInt));
    New(pPre);
    pPre^.Axis := StrToInt(EdAxPrest.Text);
    pPre^.Allies := StrToInt(EdAlPrest.Text);
-   FileWrite(FHandle, PChar(pPre),SizeOf(TPrestigeRec));
+   WriteRecord(FHandle, UnitOffs+PrestigeOffset, PChar(pPre), SizeOf(TPrestigeRec));
    Dispose(pPre);
   end;
 end;
